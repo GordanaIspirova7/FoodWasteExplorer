@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 1, 2017 2:32:58 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="foodwaste.domain.Component" table="component" catalog="FoodWaste" optimistic-lock="version">
+        <id name="compid" type="int">
+            <column name="compid" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="compsubgroup" class="foodwaste.domain.Compsubgroup" fetch="select">
+            <column name="compsubgroupid" not-null="false"  />
+        </many-to-one>
+        <property name="ftc" type="string">
+            <column name="ftc" length="256" not-null="false"  />
+        </property>
+        <property name="term" type="string">
+            <column name="term" length="256" not-null="false"  />
+        </property>
+        <property name="bt" type="string">
+            <column name="bt" length="256" not-null="false"  />
+        </property>
+        <property name="sn" type="string">
+            <column name="sn" length="256" not-null="false"  />
+        </property>
+        <property name="ai" type="string">
+            <column name="ai" length="256" not-null="false"  />
+        </property>
+        <property name="classification" type="string">
+            <column name="classification" length="256" not-null="false"  />
+        </property>
+        <property name="active" type="string">
+            <column name="active" length="256" not-null="false"  />
+        </property>
+        <property name="dateupdated" type="date">
+            <column name="dateupdated" length="10" not-null="false"  />
+        </property>
+        <property name="datecreated" type="date">
+            <column name="datecreated" length="10" not-null="false"  />
+        </property>
+        <property name="updatecomment" type="string">
+            <column name="updatecomment" length="256" not-null="false"  />
+        </property>
+        <property name="single" type="int">
+            <column name="single" not-null="false"  />
+        </property>
+        <set name="wsvalues" table="wsvalue" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="compid" not-null="false"  />
+            </key>
+            <one-to-many class="foodwaste.domain.Wsvalue" />
+        </set>
+    </class>
+</hibernate-mapping>

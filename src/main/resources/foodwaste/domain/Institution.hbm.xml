@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 1, 2017 2:32:58 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="foodwaste.domain.Institution" table="institution" catalog="FoodWaste" optimistic-lock="version">
+        <id name="instid" type="int">
+            <column name="instid" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="country" class="foodwaste.domain.Country" fetch="select">
+            <column name="ccid" not-null="false"  />
+        </many-to-one>
+        <many-to-one name="institutiontype" class="foodwaste.domain.Institutiontype" fetch="select">
+            <column name="insttypeid" not-null="false"  />
+        </many-to-one>
+        <property name="insname" type="string">
+            <column name="insname" length="256" not-null="false"  />
+        </property>
+        <set name="users" table="user" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="instid" not-null="false"  />
+            </key>
+            <one-to-many class="foodwaste.domain.User" />
+        </set>
+    </class>
+</hibernate-mapping>

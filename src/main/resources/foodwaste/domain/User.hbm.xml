@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 1, 2017 2:32:58 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="foodwaste.domain.User" table="user" catalog="FoodWaste" optimistic-lock="version">
+        <id name="userid" type="int">
+            <column name="userid" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="areofinterest" class="foodwaste.domain.Areofinterest" fetch="select">
+            <column name="intareaid" not-null="false"  />
+        </many-to-one>
+        <many-to-one name="institution" class="foodwaste.domain.Institution" fetch="select">
+            <column name="instid" not-null="false"  />
+        </many-to-one>
+        <many-to-one name="role" class="foodwaste.domain.Role" fetch="select">
+            <column name="roleid" not-null="false"  />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="name" length="256" not-null="false"  />
+        </property>
+        <property name="surname" type="string">
+            <column name="surname" length="256" not-null="false"  />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="256" not-null="false"  />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="56" not-null="false"  />
+        </property>
+        <property name="verificationToken" type="string">
+            <column name="verificationToken" length="256" not-null="true" />
+        </property>
+         <property name="enabled" type="string">
+            <column name="enabled" length="256" not-null="true" />
+        </property>
+         <property name="expireTime" type="date">
+            <column name="expireTime" not-null="true" />
+        </property>
+
+        <set name="priorities" table="priority" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="userid" not-null="false"  />
+            </key>
+            <one-to-many class="foodwaste.domain.Priority" />
+        </set>
+        <one-to-one name="searchstatistics" class="foodwaste.domain.Searchstatistics"></one-to-one>
+        <set name="wsvalues" table="wsvalue" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="userid" not-null="false"  />
+            </key>
+            <one-to-many class="foodwaste.domain.Wsvalue" />
+        </set>
+    </class>
+</hibernate-mapping>

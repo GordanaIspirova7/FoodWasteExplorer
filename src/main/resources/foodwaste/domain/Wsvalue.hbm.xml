@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 1, 2017 2:32:58 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="foodwaste.domain.Wsvalue" table="wsvalue" catalog="FoodWaste" optimistic-lock="version">
+        <id name="valueid" type="int">
+            <column name="valueid" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="acquisitiontype" class="foodwaste.domain.Acquisitiontype" fetch="select">
+            <column name="acqtypeid"    />
+        </many-to-one>
+        <many-to-one name="component" class="foodwaste.domain.Component" fetch="select">
+            <column name="compid"    />
+        </many-to-one>
+        <many-to-one name="matrix" class="foodwaste.domain.Matrix" fetch="select">
+            <column name="matrixid"    />
+        </many-to-one>
+        <many-to-one name="methodindicator" class="foodwaste.domain.Methodindicator" fetch="select">
+            <column name="methindid"    />
+        </many-to-one>
+        <many-to-one name="methodtype" class="foodwaste.domain.Methodtype" fetch="select">
+            <column name="methtypeid"    />
+        </many-to-one>
+        <many-to-one name="reference" class="foodwaste.domain.Reference" fetch="select">
+            <column name="refid"    />
+        </many-to-one>
+        <many-to-one name="unit" class="foodwaste.domain.Unit" fetch="select">
+            <column name="unitid"    />
+        </many-to-one>
+        <many-to-one name="user" class="foodwaste.domain.User" fetch="select">
+            <column name="userid"    />
+        </many-to-one>
+        <many-to-one name="valuetype" class="foodwaste.domain.Valuetype" fetch="select">
+            <column name="valtypeid"    />
+        </many-to-one>
+        <many-to-one name="wastestream" class="foodwaste.domain.Wastestream" fetch="select">
+            <column name="wsid"  />
+        </many-to-one>
+        <property name="value" type="java.lang.Double">
+            <column name="value" precision="22" scale="0" />
+        </property>
+        <property name="remark" type="string">
+            <column name="remark" length="256" />
+        </property>
+         <property name="checked" type="string">
+            <column name="checked" length="256" />
+        </property>
+    </class>
+</hibernate-mapping>

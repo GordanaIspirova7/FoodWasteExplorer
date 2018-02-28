@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 1, 2017 2:32:58 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="foodwaste.domain.Wastestream" table="wastestream" catalog="FoodWaste" optimistic-lock="version">
+        <id name="wsid" type="int">
+            <column name="wsid" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="food" class="foodwaste.domain.Food" fetch="select">
+            <column name="foodid" not-null="false"  />
+        </many-to-one>
+        <property name="wastestream" type="string">
+            <column name="wastestream" length="256" not-null="false"  />
+        </property>
+        <property name="wsdesc" type="string">
+            <column name="wsdesc" length="256" />
+        </property>
+        <property name="foodex2" type="string">
+            <column name="foodex2" length="256" not-null="false"  />
+        </property>
+        <property name="edible" type="java.lang.Double">
+            <column name="edible" precision="22" scale="0" not-null="false" />
+        </property>
+        <property name="specgravity" type="java.lang.Double">
+            <column name="specgravity" precision="22" scale="0" />
+        </property>
+        <property name="ncf" type="java.lang.Double">
+            <column name="ncf" precision="22" scale="0" />
+        </property>
+        <property name="gcf" type="java.lang.Double">
+            <column name="gcf" precision="22" scale="0" />
+        </property>
+        <property name="remark" type="string">
+            <column name="remark" length="256" not-null="false"  />
+        </property>
+        <set name="wsvalues" table="wsvalue" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="wsid" not-null="false"  />
+            </key>
+            <one-to-many class="foodwaste.domain.Wsvalue" />
+        </set>
+        <set name="priorities" table="priority" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="wsid" not-null="false"  />
+            </key>
+            <one-to-many class="foodwaste.domain.Priority" />
+        </set>
+        <set name="searchstatisticses" table="searchstatistics" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="wsid" not-null="false"  />
+            </key>
+            <one-to-many class="foodwaste.domain.Searchstatistics" />
+        </set>
+    </class>
+</hibernate-mapping>

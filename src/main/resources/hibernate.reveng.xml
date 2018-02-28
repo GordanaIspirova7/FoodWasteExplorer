@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="FoodWaste"/>
+  <table-filter match-name="wsvalue"/>
+  <table-filter match-name="acquisitiontype"/>
+  <table-filter match-name="matrix"/>
+  <table-filter match-name="compsubgroup"/>
+  <table-filter match-name="component"/>
+  <table-filter match-name="referencetype"/>
+  <table-filter match-name="methodindicator"/>
+  <table-filter match-name="user"/>
+  <table-filter match-name="searchstatistics"/>
+  <table-filter match-name="compgroup"/>
+  <table-filter match-name="unit"/>
+  <table-filter match-name="fcdb"/>
+  <table-filter match-name="methodtype"/>
+  <table-filter match-name="wastestream"/>
+  <table-filter match-name="institutiontype"/>
+  <table-filter match-name="food"/>
+  <table-filter match-name="valuetype"/>
+  <table-filter match-name="areofinterest"/>
+  <table-filter match-name="reference"/>
+  <table-filter match-name="institution"/>
+  <table-filter match-name="country"/>
+  <table-filter match-name="role"/>
+  <table-filter match-name="priority"/>
+</hibernate-reverse-engineering>

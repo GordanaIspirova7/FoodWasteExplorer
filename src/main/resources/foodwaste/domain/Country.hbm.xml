@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 1, 2017 2:32:58 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="foodwaste.domain.Country" table="country" catalog="FoodWaste" optimistic-lock="version">
+        <id name="ccid" type="int">
+            <column name="ccid" />
+            <generator class="assigned" />
+        </id>
+        <property name="countrycode" type="string">
+            <column name="countrycode" length="2" not-null="false"  />
+        </property>
+          <property name="countryName" type="string">
+            <column name="countryName" length="2" not-null="false"  />
+        </property>
+        <set name="fcdbs" table="fcdb" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ccid" not-null="false"  />
+            </key>
+            <one-to-many class="foodwaste.domain.Fcdb" />
+        </set>
+        <set name="institutions" table="institution" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ccid" not-null="false"  />
+            </key>
+            <one-to-many class="foodwaste.domain.Institution" />
+        </set>
+    </class>
+</hibernate-mapping>

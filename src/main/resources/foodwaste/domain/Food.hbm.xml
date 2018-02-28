@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 1, 2017 2:32:58 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="foodwaste.domain.Food" table="food" catalog="FoodWaste" optimistic-lock="version">
+        <id name="foodid" type="int">
+            <column name="foodid" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="fcdb" class="foodwaste.domain.Fcdb" fetch="select">
+            <column name="fcdbid" />
+        </many-to-one>
+        <property name="foodname" type="string">
+            <column name="foodname" length="256" not-null="false"  />
+        </property>
+        <property name="origfoodcode" type="string">
+            <column name="origfoodcode" length="256" />
+        </property>
+        <property name="remark" type="string">
+            <column name="remark" length="256" />
+        </property>
+        <set name="wastestreams" table="wastestream" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="foodid" not-null="false"  />
+            </key>
+            <one-to-many class="foodwaste.domain.Wastestream" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 1, 2017 2:32:58 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="foodwaste.domain.Areofinterest" table="areofinterest" catalog="FoodWaste" optimistic-lock="version">
+        <id name="intareaid" type="int">
+            <column name="intareaid" />
+            <generator class="assigned" />
+        </id>
+        <property name="interestarea" type="string">
+            <column name="interestarea" length="256" not-null="false"  />
+        </property>
+        <set name="users" table="user" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="intareaid" not-null="false"  />
+            </key>
+            <one-to-many class="foodwaste.domain.User" />
+        </set>
+    </class>
+</hibernate-mapping>

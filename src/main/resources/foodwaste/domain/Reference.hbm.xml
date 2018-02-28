@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 1, 2017 2:32:58 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="foodwaste.domain.Reference" table="reference" catalog="FoodWaste" optimistic-lock="version">
+        <id name="refid" type="int">
+            <column name="refid" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="referencetype" class="foodwaste.domain.Referencetype" fetch="select">
+            <column name="reftypeid" not-null="false"  />
+        </many-to-one>
+        <property name="wsid" type="int">
+            <column name="wsid" not-null="false"  />
+        </property>
+        <property name="srcode" type="string">
+            <column name="srcode" length="256" />
+        </property>
+        <property name="citation" type="string">
+            <column name="citation" length="256" />
+        </property>
+        <set name="wsvalues" table="wsvalue" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="refid" not-null="false"  />
+            </key>
+            <one-to-many class="foodwaste.domain.Wsvalue" />
+        </set>
+    </class>
+</hibernate-mapping>

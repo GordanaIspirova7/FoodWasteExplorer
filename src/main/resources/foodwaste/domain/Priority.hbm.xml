@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 1, 2017 2:32:58 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="foodwaste.domain.Priority" table="priority" catalog="FoodWaste" optimistic-lock="version">
+        <id name="priorityid" type="int">
+            <column name="priorityid" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="user" class="foodwaste.domain.User" fetch="select">
+            <column name="userid" not-null="false"  />
+        </many-to-one>
+        <many-to-one name="wastestream" class="foodwaste.domain.Wastestream" fetch="select">
+            <column name="wsid" not-null="false"  />
+        </many-to-one>
+        <property name="priority" type="int">
+            <column name="priority" not-null="false"  />
+        </property>
+    </class>
+</hibernate-mapping>

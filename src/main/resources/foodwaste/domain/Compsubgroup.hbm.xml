@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 1, 2017 2:32:58 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="foodwaste.domain.Compsubgroup" table="compsubgroup" catalog="FoodWaste" optimistic-lock="version">
+        <id name="compsubgroupid" type="int">
+            <column name="compsubgroupid" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="compgroup" class="foodwaste.domain.Compgroup" fetch="select">
+            <column name="compgroupid" not-null="false"  />
+        </many-to-one>
+        <property name="compsubgroup" type="string">
+            <column name="compsubgroup" length="256" not-null="false"  />
+        </property>
+        <set name="components" table="component" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="compsubgroupid" not-null="false"  />
+            </key>
+            <one-to-many class="foodwaste.domain.Component" />
+        </set>
+    </class>
+</hibernate-mapping>

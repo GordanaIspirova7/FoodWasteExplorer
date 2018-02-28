@@ -1,0 +1,470 @@
+ @font-face {
+    font-family: regular;
+    src: url(Raleway-Regular.ttf);
+}
+    @font-face {
+    font-family: heavy;
+    src: url(Raleway-Heavy.ttf);
+}
+    @font-face {
+    font-family: bold;
+    src: url(Raleway-Bold.ttf);
+}
+   @font-face {
+    font-family: medium;
+    src: url(Raleway-Medium.ttf);
+}
+   @font-face {
+    font-family: semibold;
+    src: url(Raleway-SemiBold.ttf);
+}
+.error {
+	color: #ff0000;
+}
+
+.errorblock {
+	color: #000;
+	background-color: #ffEEEE;
+	border: 3px solid #ff0000;
+	padding: 8px;
+	margin: 16px; 
+}
+.style-1 h2{
+    color: #95c11f;
+    font-family: regular;
+}
+
+.style-4 h4{
+    color: #95c11f;
+    font-family: regular;
+}
+.style-6 h4{
+    color: #174c87;
+    font-family: regular;
+}
+.style-1 h1{
+    color: white;
+    font-family: bold;
+}
+.style-headder p{
+    font-size: 2vw;
+    color: white;
+    font-family: bold;
+}
+.style-2 h3{
+    color: #174c87;
+    font-family: semibold;
+}
+.style-3 h3{
+    color: #95c11f;
+    font-family: semibold;
+}
+.style-3 h4,a{
+    color: #95c11f;
+    font-family: semibold;
+}
+.style-3 h5{
+    color: whitesmoke;
+    font-family: regular;
+}
+
+.style-4{
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    text-align:center;  
+}
+.style-4 h3{
+    color: #95c11f;
+    font-family: semibold;
+}
+
+.style-4 h5{
+    color: #174c87;
+    font-family: bold;
+}
+
+  table-editable,
+    thead,
+    tr,
+    tbody,
+    th,
+    td	{
+        text-align: center;
+        align-items: center;
+        font-family: regular;
+    }
+    
+	
+	.row div{
+	    text-align: center;
+        align-items: center;
+        font-family: regular;
+	}
+.table-editable th{
+       /* background-color: #174c87; */
+          color: #174c87;
+        font-family: bold;
+        justify-content: center;
+         align-items: center;
+    text-align: center;
+	font-size: 15px;
+        /*font-color:  #eeeae9;*/
+    } 
+ .table-editable td{
+	margin-top:2%;
+ font-family:regular;
+ font-size: 15px;
+ }
+ 
+  .td{
+	margin-top:2%;
+ font-family:regular;
+ font-size: 15px;
+ }
+    
+.container-row {
+    padding-top: 0.5vw;
+    flex-direction: row;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    padding-top: 0.5vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.table-editable
+{
+    margin-bottom: auto;
+    text-align:center;
+}
+.table-editable {
+  position: relative;
+  
+  .glyphicon {
+    font-size: 20px;
+  }
+
+}
+
+.glyphicon-remove {
+  color: #700;
+  cursor: pointer;
+  
+  &:hover {
+    color: #f00;
+  }
+}
+.table-edit {
+  color: #700;
+  cursor: pointer;
+  
+  &:hover {
+    color: #f00;
+  }
+}
+
+.table-up, .table-down {
+  color: #007;
+  cursor: pointer;
+  
+  &:hover {
+    color: #00f;
+  }
+}
+
+.table-add {
+  color: #070;
+  cursor: pointer;
+  align-items: center;
+ 
+  
+  &:hover {
+    color: #0b0;
+  }
+}
+.submitLink {
+  background-color: transparent;
+  text-decoration: underline; 
+  border: none;
+  color: blue;
+  cursor: pointer;
+}
+submitLink:focus {
+  outline: none;
+}
+.btn-success.active
+{
+background-color: #5ea03f;}
+.button
+{
+	background-color: #95c11f; 
+	border: none;
+}
+.footerRefresh1 {
+    
+    float: left;
+    color: #eeeae9;
+    font-family: regular;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 17px;
+  
+}
+.footerRefresh {
+    
+    float: left;
+    color: #eeeae9;
+    font-family: regular;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 17px;
+  
+}
+.footerRefresh img{ 
+margin-left: 1%;}
+.style-1 h4{
+    color: #95c11f;
+    font-family: regular;
+
+}
+.style-2 h4{
+    color: #174c87;
+    font-family: medium;
+
+}
+.style-1 h4:hover{
+    color: #5ea03f;
+}
+
+
+.style-select.active
+{
+  outline-color: #95c11f;
+}
+
+.style-select.hover {
+  outline-color: #95c11f;
+}
+
+.style-select{
+  
+  color: #95c11f; 
+} 
+
+.style-select option:hover {
+  color: #95c11f; 
+}
+
+.style-select{
+        display: block;
+        margin: 0 auto;
+    }
+.bg-image {
+    background: rgba(0,0,0, .5);
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0; right: 0; top: 0; bottom: 0;
+    transition: background .5s;
+}
+.btn-success{
+	background-color: #95c11f; font-family:regular; border: none;
+}
+.glyphicon-pencil
+{
+	color: #174c87;
+}
+.glyphicon-ok
+{
+	color: #95c11f;
+}
+.glyphicon-plus
+{
+	color: #95c11f;
+}
+.change-color
+{
+	color: #95c11f;
+}
+.change-color1
+{
+	color: red;
+}
+.btn-transparent
+{
+	outline: none; 
+	background-color:transparent; 
+	border:none;
+}
+table th, table td {
+    padding:0.8em;
+    border: 1px solid;
+}
+table tr.border-less>th {
+    border-top: 0px solid #FFFFFF;
+    border-left: 0px solid #FFFFFF;
+	border-right: 0px solid #FFFFFF;
+}
+.flex-container
+{
+ 
+    align-items: center;  
+}
+body{
+ display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  
+}
+.footer
+{
+  bottom: 0;
+  margin-bottom: 0%;
+  width: 100%;
+  background: #eeeae9;
+  position: relative;
+}
+
+.dropdown{
+  display: inline; vertical-align:middle; padding-top: 1vw;
+    padding-bottom: 1vw;
+}
+
+.dropbtn
+{
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown-content
+{
+    display: none;
+    float: bottom;
+    position: absolute;
+    background-color: #eeeae9;
+    min-width: 15vw;
+    font-size: 1vw;
+    right: 0;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.table-editable{
+    padding-top: 2vw;
+}
+
+
+.tab 
+{
+   display: inline; vertical-align:middle; padding-top: 1vw;
+    padding-bottom: 1vw;
+    
+}
+
+.tab-link
+{
+    font-size: 1.6vw; color: white;
+}
+
+.titles{
+    text-align: center; color: #174c87; font-family: regular; font-size: 0.8vw;
+}
+
+.titlesNA
+{text-align:center; color: grey; font-family: regular; font-size: 0.8vw;}
+
+
+
+.mainselect select
+{
+    font-family: regular;  padding-top:0.5vw; font-size:1vw; 
+} 
+
+.mainselectNA select
+{
+    color: grey;  padding-top:0.5vw; font-family: regular; font-size:1vw;
+}
+
+.selected{
+    font-size: 1.5vw;
+    color: #174c87;
+    font-family: regular;
+    padding-top: 1vw;
+}
+
+.tableview tr td input{
+    
+    white-space: nowrap;
+    text-align: center; border:none; outline:none;
+    font-size: 0.9vw;
+   
+}
+.tableview tr td div{
+    
+    white-space: nowrap;
+    text-align: center; border:none; outline:none;
+    font-size: 0.9vw;
+   
+}
+.tableview tr{
+    height: 1.5vw;
+    
+}
+
+.tableview tr th
+{
+   white-space: nowrap; 
+    font-size: 1vw;
+}
+
+.tableview tr td
+{
+    white-space: nowrap;
+    text-align: center; 
+    font-size: 0.9vw;
+}
+
+.tableview tr td select{
+     border:none; outline: none; width: 10vw; text-align-last:center; 
+}
+.tableview tr td.citation
+{
+    text-align: center; width: 20vw; 
+}
+
+.menu div
+{
+    width: 18vw;
+}
+
+.available a
+{
+    background-color: #174c87; color: white; font-family:regular; border-style:inset; border: none; font-size:1.2vw;
+}
+
+.available button
+{
+    background-color: #174c87; color: white; font-family:regular; border-style:inset; border: none; font-size:1.2vw;
+}
+.available button:hover
+{
+    background-color: #174c87; color: white; font-family:regular; border-style:inset; border: none; font-size:1.2vw;
+}
+.available a:hover
+{
+    background-color: #174c87; color: white; font-family:regular; border-style:inset; border: none; font-size:1.2vw;
+}
+.pageing 
+{
+    font-size: 1vw;
+}
+
+

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 1, 2017 2:32:58 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="foodwaste.domain.Fcdb" table="fcdb" catalog="FoodWaste">
+        <id name="fcdbid" type="int">
+            <column name="fcdbid" />
+            <generator class="assigned" />
+        </id>
+        <version name="version" type="string">
+            <column name="version" length="256" not-null="false"  />
+        </version>
+        <many-to-one name="country" class="foodwaste.domain.Country" fetch="select">
+            <column name="ccid" not-null="false"  />
+        </many-to-one>
+        <property name="fcdbdesc" type="string">
+            <column name="fcdbdesc" length="256" />
+        </property>
+        <set name="foods" table="food" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="fcdbid" />
+            </key>
+            <one-to-many class="foodwaste.domain.Food" />
+        </set>
+    </class>
+</hibernate-mapping>
