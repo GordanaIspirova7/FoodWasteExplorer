@@ -144,21 +144,22 @@ document.addEventListener("click", function(evt) {
 
 <%
 if(message.equals("added")) {%>
-<div class="container">
-    <h3 style="color:#174c87;">Value added.</h3>
+<div class="container" style="color:#174c87; font-size: 1.5vw; font-family: regular;">
+   Value added.
 </div> 
 <div class="container">
-    <h2>   <a href="#" onclick="location.href = document.referrer; return false;">Go Back </a> <h2>
+      <a style="font-size: 2vw; font-family: bold; color: #95c11f;" href="#" onclick="location.href = document.referrer; return false;">Go Back </a> 
 </div>
 <%        }
 else
 {
 %>
-<div class="container">
-    <h3 style="color:red;">Something went wrong. Try again.</h3>
+<div class="container" style="color:red; font-size: 1.5vw; font-family: regular;">
+    
+Something went wrong. Try again.
 </div> 
 <div class="container">
-    <h2> <a href="#" onclick="history.go(-1)">Go Back</a> <h2>
+   <a style="font-size: 2vw; font-family: bold; color: #174c87" href="#" onclick="history.go(-1)">Go Back</a> 
 </div>
 <%
     }

@@ -145,13 +145,13 @@ document.addEventListener("click", function(evt) {
 
 <%
 if(message.equals("added")) {%>
-<div class="container">
-    <h3 style="color:#174c87;">Value added.</h3>
-</div>
+<div class="container" style="color:#174c87; font-size: 1.5vw; font-family: regular;">
+   Value added.
+</div> 
 <div class="container">
     <form:form method="POST" commandName="component" action="componentHome2">
          <form:input  path="ftc" class="hide" value="<%=component%>"/>
-         <form:button class="btn-transparent" type="submit"><h2 style="font-family: regular; color: #95c11f; size: 3vw; ">Go Back</h2></form:button> 
+         <form:button class="btn-transparent" type="submit"><h2 style="font-family: regular; color: #95c11f; size: 2vw; ">Go Back</h2></form:button> 
     </form:form>
 </div>
 
@@ -159,11 +159,12 @@ if(message.equals("added")) {%>
 else
 {
 %>
-<div class="container">
-    <h3 style="color:red;">Something went wrong. Try again.</h3>
+<div class="container" style="color:red; font-size: 1.5vw; font-family: regular;">
+    
+Something went wrong. Try again.
 </div> 
 <div class="container">
-    <h2>   <a href="#" onclick="location.href = document.referrer; return false;">Go Back </a> <h2>
+   <a style="font-size: 2vw; font-family: bold; color: #174c87" href="#" onclick="history.go(-1)">Go Back</a> 
 </div>
 <%
     }

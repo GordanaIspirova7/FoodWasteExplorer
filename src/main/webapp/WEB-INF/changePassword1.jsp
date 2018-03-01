@@ -49,15 +49,15 @@
    if(message.equals("fail")){
 %>
 <tr>
-    <td style="text-align:center">
- <h4 style="color:#ffffff">Something went wrong.</h4>
+    <td style="text-align:center; font-family: regular; color:whitesmoke; font-size:1.5vw;">
+ Something went wrong.
  
     </td>
 
 </tr>
 <tr>
-    <td style="text-align:center">
-     <a href="#" onclick="history.go(-1)">Try again</a>
+    <td style="text-align:center;">
+     <a href="#" style="text-align:center; color:#95c11f; font-size: 2vw; font-family: medium;" onclick="history.go(-1)">Try again</a>
     </td>
 </tr>
 

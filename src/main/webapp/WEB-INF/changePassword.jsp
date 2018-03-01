@@ -69,8 +69,8 @@ Please enter your email address.
 
 <tr>	  
         
-          <td style="text-align:center; font-family: regular; color:whitesmoke; font-size:1.5vw;"><label>Email</label></td>
-          <td style="text-align:center"><form:input style="font-family: regular; height:2vw; font-size:1.5vw;" path="email" /></td>
+          <td style="text-align:center; font-family: regular; color:whitesmoke; font-size:1.5vw; width: 20vw; "><label>Email</label></td>
+          <td style="text-align:center; width: 20vw; "><form:input style="font-family: regular; height:2vw; font-size:1.5vw; width: 20vw;" path="email" /></td>
         
 </tr>
 

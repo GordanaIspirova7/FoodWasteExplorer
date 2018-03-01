@@ -209,7 +209,6 @@ Partners may be held responsible for the use(s) made of the information containe
   border-left-color: #eeeae9;
   border-bottom-color: #eeeae9;
   border-right-color: rgba(60,60,60,.4);
-  
   bottom:0;
   left:0;">
     <div class="style-1">

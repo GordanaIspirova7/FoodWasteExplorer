@@ -139,21 +139,21 @@ if(message.equals("edited"))
      {
 %>
 
-<div class="container">
-    <h3 style="color:#174c87;">Waste stream edited.</h3>
+<div class="container" style="color:#174c87; font-size:1.5vw; font-family: regular;">
+   Waste stream edited.
 </div> 
 <div class="container">
-    <h2>   <a href="#" onclick="location.href = document.referrer; return false;">Go Back </a> <h2>
+    <a href="#" style="color: #95c11f; font-size: 2vw; font-family: regular;" onclick="location.href = document.referrer; return false;">Go Back </a> 
+
 </div>
 <%        }
 else
 {
 %>
-<div class="container">
-    <h3 style="color:red;">Something went wrong. Try again.</h3>
+<div class="container" style="color:red; font-size: 1.5vw; font-family: regular;">Something went wrong. Try again.
 </div> 
 <div class="container">
-    <h2> <a href="#" onclick="location.href = document.referrer; return false;">Go Back</a> <h2>
+    <a href="#" style="color: #95c11f; font-size: 2vw; font-family: regular;" onclick="location.href = document.referrer; return false;">Go Back</a> 
 </div>
 <%
     }

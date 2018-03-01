@@ -122,8 +122,8 @@ document.addEventListener("click", function(evt) {
      ServiceImpl service= new ServiceImpl();
      WsvaluePostClass w1=new WsvaluePostClass();
      HttpSession httpSession=request.getSession();
-     String foodname = (String) httpSession.getAttribute("foodname");
-     String wastestream = (String) httpSession.getAttribute("wastestream"); 
+     
+ 
      Integer valueid=(Integer)request.getAttribute("valueid");
      w1.setValueid(valueid);
 
@@ -135,21 +135,18 @@ if(message.equals("deleted"))
      {
 %>
 
-<div class="container">
-    <h3 style="color:#174c87; font-size:1.5vw; font-family: regular;">Value deleted.</h3>
+<div class="container" style="color:#174c87; font-size:1.5vw; font-family: regular;">
+    Value deleted.
 </div> 
 <div class="container">
-     <%String value="/FoodWasteExplorer/table?wastestream="+wastestream+"&foodname="+foodname; %> 
-    <a href="<%=value%>" style="color: #95c11f; font-size: 2vw; font-family: regular;">Go Back </a> 
-
+    <a href="#" style="color: #95c11f; font-size: 2vw; font-family: regular;" onclick="location.href = document.referrer; return false;">Go Back </a> 
 
 </div>
 <%        }
 else
 {
 %>
-<div class="container">
-    <h3 style="color:red; font-size: 1.5vw; font-family: regular;">Something went wrong. Try again.</h3>
+<div class="container" style="color:red; font-size: 1.5vw; font-family: regular;">Something went wrong. Try again.
 </div> 
 <div class="container">
     <a href="#" style="color: #95c11f; font-size: 2vw; font-family: regular;" onclick="location.href = document.referrer; return false;">Go Back</a> 
