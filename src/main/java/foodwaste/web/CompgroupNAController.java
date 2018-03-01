@@ -1,9 +1,4 @@
 
-/*  Compgroup2Controller
-  * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package foodwaste.web;
 import foodwaste.domain.Compgroup;
 import foodwaste.domain.Component;
@@ -154,7 +149,7 @@ public class CompgroupNAController{
              
              
              
-                   /////////////////////////////////////////////
+              //remove duplicates
       
                   Map<Integer, ComponentList> map = new HashMap<Integer, ComponentList>();
             for (ComponentList r : result2) {
@@ -163,7 +158,8 @@ public class CompgroupNAController{
           map.put(key, r);
      }
 }
-            
+       
+            //sort
 Collection<ComponentList> result11 = map.values();
 List<ComponentList> result12=new ArrayList();
 for(ComponentList r1:result11)
@@ -179,7 +175,7 @@ Collections.sort(result12, new Comparator<ComponentList>() {
       /////////////////////////////////////////////
              
              
-             
+             //paging
     
                PagedListHolder<ComponentList> pagedListHolder = new PagedListHolder<>(result12);
         pagedListHolder.setPageSize(20);
@@ -212,7 +208,7 @@ Collections.sort(result12, new Comparator<ComponentList>() {
          
          
          
-         
+         //lists for selecting
          
   Integer compgroupid=0;
          List<Compgroup> compgroupData1=service.getDDCompgroups();
@@ -321,7 +317,6 @@ Collections.sort(result12, new Comparator<ComponentList>() {
       String compgroup=(String)request.getSession().getAttribute("compgroup");
       request.getSession().setAttribute("compgroup", compgroup);
       model.addAttribute("compgroup",compgroup);
- //     model.addAttribute("compgroup",cg.getCompgroup());
       String wastestream=(String)request.getSession().getAttribute("wastestream");
       request.getSession().setAttribute("wastestream", wastestream);
       model.addAttribute("wastestream", wastestream);
@@ -356,8 +351,8 @@ Collections.sort(result12, new Comparator<ComponentList>() {
              
              
              
-                   /////////////////////////////////////////////
-      
+                  
+      //removing duplicates
                   Map<Integer, ComponentList> map = new HashMap<Integer, ComponentList>();
             for (ComponentList r : result2) {
             Integer key = r.getCompid();
@@ -365,7 +360,8 @@ Collections.sort(result12, new Comparator<ComponentList>() {
           map.put(key, r);
      }
 }
-            
+    
+            //sorting
 Collection<ComponentList> result11 = map.values();
 List<ComponentList> result12=new ArrayList();
 for(ComponentList r1:result11)
@@ -381,7 +377,7 @@ Collections.sort(result12, new Comparator<ComponentList>() {
       /////////////////////////////////////////////
              
              
-             
+             //paging
     
                PagedListHolder<ComponentList> pagedListHolder = new PagedListHolder<>(result12);
         pagedListHolder.setPageSize(20);
@@ -415,7 +411,7 @@ Collections.sort(result12, new Comparator<ComponentList>() {
          
          
          
-         
+         //lists for selecting
   Integer compgroupid=0;
          List<Compgroup> compgroupData1=service.getDDCompgroups();
          for(Compgroup object:compgroupData1)

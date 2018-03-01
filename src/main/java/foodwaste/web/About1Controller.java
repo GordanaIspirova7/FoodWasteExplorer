@@ -65,7 +65,7 @@ public class About1Controller{
         model.addAttribute("command",food);
        String email=(String)request.getParameter("email");
        request.getSession().setAttribute("email", email);
- 
+     
      model.addAttribute("user",u);
      model.addAttribute("email",u.getEmail());
      EditUser u1=new EditUser();

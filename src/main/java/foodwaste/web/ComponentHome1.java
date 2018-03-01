@@ -65,7 +65,7 @@ public class ComponentHome1{
    @RequestParam(value = "compgroup", required=false) String cgr,
    @RequestParam(value = "cmp", required=false) String comp
       ){
-      
+      //Checking if All Components is selected
         Integer compgroupid1=0, flag1=0;
           String group=(String)request.getSession().getAttribute("compgroup");
           List<Compgroup> compgroupData12=service.getDDCompgroups();
@@ -94,7 +94,7 @@ public class ComponentHome1{
           }
               
       }
-      
+      //if it's selected
       if(flag1==0)
       {
       User u=new User();

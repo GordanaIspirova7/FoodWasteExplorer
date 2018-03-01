@@ -115,7 +115,6 @@ public class CompgroupController{
       String compgroup=(String)request.getParameter("compgroup");
       request.getSession().setAttribute("compgroup", compgroup);
       model.addAttribute("compgroup",compgroup);
-     // model.addAttribute("compgroup",cg.getCompgroup());
       List<WsvalueResult> wsvalues=service.searchWastestream(wastestream);
       String email=(String)request.getSession().getAttribute("email");
       request.getSession().setAttribute("email", email);
@@ -142,7 +141,8 @@ public class CompgroupController{
                 }
                 if(flag==1) 
                 { flag=0; }  }
-       ///////////////////////////////////////////////////////
+         
+       //removing duplicates
                    Map<Integer, WsvalueResult> map = new HashMap<Integer, WsvalueResult>();
             for (WsvalueResult r : result1) {
             Integer key = r.getCompid();
@@ -150,7 +150,7 @@ public class CompgroupController{
           map.put(key, r);
                                         }
                                             }
-            
+        //sorting    
 Collection<WsvalueResult> result11 = map.values();
 List<WsvalueResult> result12=new ArrayList();
 for(WsvalueResult r1:result11)
@@ -165,7 +165,7 @@ Collections.sort(result12, new Comparator<WsvalueResult>() {
 });
 
 
- 
+ //paging
           PagedListHolder<WsvalueResult> pagedListHolder = new PagedListHolder<>(result12);
         pagedListHolder.setPageSize(20);
         model.addAttribute("maxPages", pagedListHolder.getPageCount());
@@ -185,7 +185,7 @@ Collections.sort(result12, new Comparator<WsvalueResult>() {
          
          
          
-         
+        //lists for selecting
          
          Integer compgroupid=0;
          List<Compgroup> compgroupData1=service.getDDCompgroups();
@@ -267,6 +267,7 @@ Collections.sort(result12, new Comparator<WsvalueResult>() {
        model.addAttribute("wastestreamList",wastestreamList);
       return "compgroup";
    }}
+          //same for the other pages (page!=1)
            else{
       model.addAttribute("user",u);
       model.addAttribute("email",u.getEmail());
@@ -291,7 +292,6 @@ Collections.sort(result12, new Comparator<WsvalueResult>() {
       String compgroup=(String)request.getParameter("compgroup");
       request.getSession().setAttribute("compgroup", compgroup);
       model.addAttribute("compgroup",compgroup);
-     // model.addAttribute("compgroup",cg.getCompgroup());
       List<WsvalueResult> wsvalues=service.searchWastestream(wastestream);
       String email=(String)request.getSession().getAttribute("email");
       request.getSession().setAttribute("email", email);
@@ -318,7 +318,7 @@ Collections.sort(result12, new Comparator<WsvalueResult>() {
                 }
                 if(flag==1) 
                 { flag=0; }  }
-       ///////////////////////////////////////////////////////
+       //remove duplicates
                    Map<Integer, WsvalueResult> map = new HashMap<Integer, WsvalueResult>();
             for (WsvalueResult r : result1) {
             Integer key = r.getCompid();
@@ -326,7 +326,7 @@ Collections.sort(result12, new Comparator<WsvalueResult>() {
           map.put(key, r);
                                         }
                                             }
-            
+            //sorting
 Collection<WsvalueResult> result11 = map.values();
 List<WsvalueResult> result12=new ArrayList();
 for(WsvalueResult r1:result11)
@@ -341,7 +341,7 @@ Collections.sort(result12, new Comparator<WsvalueResult>() {
 });
 
 
- 
+ //paging
           PagedListHolder<WsvalueResult> pagedListHolder = new PagedListHolder<>(result12);
         pagedListHolder.setPageSize(20);
         model.addAttribute("maxPages", pagedListHolder.getPageCount());
@@ -472,18 +472,25 @@ Collections.sort(result12, new Comparator<WsvalueResult>() {
          List<WsvalueResult> wsvalues=service.searchWastestream(wastestream);
          List<ComponentList> list=service.searchCompgroup(compgroup);
          Integer flag=0, flag1=0;
-         for (WsvalueResult ws: wsvalues){
+         for (WsvalueResult ws: wsvalues)
+         {
                  
                   if((ws.getCftc().equals(component))&&(flag==0))
-                { flag=1; flag1=1;}}
-         if(flag1==0){
+                { flag=1; 
+                  flag1=1;
+                }
+         }
+         if(flag1==0)
+         {
          for(ComponentList cl:list)
 {
 if(cl.getCftc().equals(component))
 {
     flag=2;
-}}}
-
+}
+}
+         }
+//if the component selected has a value
    if((flag==1)&&(flag1==1)){
        
       model.addAttribute("user",u);
@@ -506,6 +513,8 @@ if(cl.getCftc().equals(component))
 
       return "redirect:/componentHome";
    }
+   
+   //if the component selected hasn't value entered (value=NA)
    else if ((flag==2)&&(flag1==0)){
       
       model.addAttribute("user",u);
@@ -550,6 +559,7 @@ public String editWastevalue(@ModelAttribute("SpringWeb") WsvaluePostClass w, Bi
 
 return "redirect:/editWastevalue";
 } 
+
 @RequestMapping(value="/editWastevalue1", params="action1", method=RequestMethod.POST)
 public String deleteWastevalue(@ModelAttribute("SpringWeb") WsvaluePostClass w, BindingResult result, ModelMap model, HttpServletRequest request)
 {
@@ -577,14 +587,6 @@ public String foodwasteHome(@ModelAttribute("SpringWeb") User u, BindingResult r
 
 return "redirect:/foodwasteHome";
 }
-
-
-
-
-
-
-
-
 
 
 
