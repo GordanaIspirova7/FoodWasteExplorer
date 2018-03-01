@@ -466,5 +466,23 @@ body{
 {
     font-size: 1vw;
 }
+.footer
+{
+  vertical-align: middle; position: relative;
+  width: 100%;
+  margin: 0 auto;
+  background: #eeeae9;
+  padding: 20px 22px;
+  border: 1px solid;
+  margin-top: 2%;
+  border-top-color: #eeeae9;
+  border-left-color: #eeeae9;
+  border-bottom-color: #eeeae9;
+  border-right-color: rgba(60,60,60,.4);
+  bottom:0;
+  left:0;
+}
+
+
 
 
